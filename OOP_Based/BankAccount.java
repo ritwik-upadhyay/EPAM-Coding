@@ -12,7 +12,8 @@ public class BankAccount {
             this.balance = balance;
         }
         else {
-            this.balance = 0;
+            System.out.println("Invalid initial balance. Setting balance to 0.");
+            this.balance = 0.0;
         }
     }
     //Deposit method
