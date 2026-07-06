@@ -34,146 +34,146 @@ public class MergeAnalyticsCounts {
 
 //------------------OR------------------------
 
-import java.util.*;
+// import java.util.*;
 
-public class MergeAnalyticsCounts {
+// public class MergeAnalyticsCounts {
 
-    // Pair class to store key-count entries
-    static class Pair {
+//     // Pair class to store key-count entries
+//     static class Pair {
 
-        String key;
-        long count;
+//         String key;
+//         long count;
 
-        Pair(String key, long count) {
-            this.key = key;
-            this.count = count;
-        }
-    }
+//         Pair(String key, long count) {
+//             this.key = key;
+//             this.count = count;
+//         }
+//     }
 
-    // Merge analytics counts
-    public static List<Pair> mergeCounts(
-            List<Pair> systemA,
-            List<Pair> systemB
-    ) {
+//     // Merge analytics counts
+//     public static List<Pair> mergeCounts(
+//             List<Pair> systemA,
+//             List<Pair> systemB
+//     ) {
 
-        // Store final merged counts
-        Map<String, Long> mergedMap = new HashMap<>();
+//         // Store final merged counts
+//         Map<String, Long> mergedMap = new HashMap<>();
 
-        // Process System A
-        for (Pair entry : systemA) {
+//         // Process System A
+//         for (Pair entry : systemA) {
 
-            mergedMap.put(
-                    entry.key,
-                    mergedMap.getOrDefault(
-                            entry.key,
-                            0L
-                    ) + entry.count
-            );
-        }
+//             mergedMap.put(
+//                     entry.key,
+//                     mergedMap.getOrDefault(
+//                             entry.key,
+//                             0L
+//                     ) + entry.count
+//             );
+//         }
 
-        // Process System B
-        for (Pair entry : systemB) {
+//         // Process System B
+//         for (Pair entry : systemB) {
 
-            mergedMap.put(
-                    entry.key,
-                    mergedMap.getOrDefault(
-                            entry.key,
-                            0L
-                    ) + entry.count
-            );
-        }
+//             mergedMap.put(
+//                     entry.key,
+//                     mergedMap.getOrDefault(
+//                             entry.key,
+//                             0L
+//                     ) + entry.count
+//             );
+//         }
 
-        // Store non-zero results
-        List<Pair> result = new ArrayList<>();
+//         // Store non-zero results
+//         List<Pair> result = new ArrayList<>();
 
-        for (Map.Entry<String, Long> entry
-                : mergedMap.entrySet()) {
+//         for (Map.Entry<String, Long> entry
+//                 : mergedMap.entrySet()) {
 
-            if (entry.getValue() != 0) {
+//             if (entry.getValue() != 0) {
 
-                result.add(
-                        new Pair(
-                                entry.getKey(),
-                                entry.getValue()
-                        )
-                );
-            }
-        }
+//                 result.add(
+//                         new Pair(
+//                                 entry.getKey(),
+//                                 entry.getValue()
+//                         )
+//                 );
+//             }
+//         }
 
-        // Sort lexicographically by key
-        result.sort((a, b) ->
-                a.key.compareTo(b.key)
-        );
+//         // Sort lexicographically by key
+//         result.sort((a, b) ->
+//                 a.key.compareTo(b.key)
+//         );
 
-        return result;
-    }
+//         return result;
+//     }
 
-    // Print final output
-    public static void printResult(
-            List<Pair> result
-    ) {
+//     // Print final output
+//     public static void printResult(
+//             List<Pair> result
+//     ) {
 
-        // If all totals become zero
-        if (result.isEmpty()) {
+//         // If all totals become zero
+//         if (result.isEmpty()) {
 
-            System.out.println("EMPTY");
-            return;
-        }
+//             System.out.println("EMPTY");
+//             return;
+//         }
 
-        // Print each pair
-        for (Pair entry : result) {
+//         // Print each pair
+//         for (Pair entry : result) {
 
-            System.out.println(
-                    entry.key + " " + entry.count
-            );
-        }
-    }
+//             System.out.println(
+//                     entry.key + " " + entry.count
+//             );
+//         }
+//     }
 
-    public static void main(String[] args) {
+//     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+//         Scanner sc = new Scanner(System.in);
 
-        // Read size of System A
-        int a = sc.nextInt();
+//         // Read size of System A
+//         int a = sc.nextInt();
 
-        List<Pair> systemA =
-                new ArrayList<>();
+//         List<Pair> systemA =
+//                 new ArrayList<>();
 
-        // Read System A pairs
-        for (int i = 0; i < a; i++) {
+//         // Read System A pairs
+//         for (int i = 0; i < a; i++) {
 
-            String key = sc.next();
-            long count = sc.nextLong();
+//             String key = sc.next();
+//             long count = sc.nextLong();
 
-            systemA.add(
-                    new Pair(key, count)
-            );
-        }
+//             systemA.add(
+//                     new Pair(key, count)
+//             );
+//         }
 
-        // Read size of System B
-        int b = sc.nextInt();
+//         // Read size of System B
+//         int b = sc.nextInt();
 
-        List<Pair> systemB =
-                new ArrayList<>();
+//         List<Pair> systemB =
+//                 new ArrayList<>();
 
-        // Read System B pairs
-        for (int i = 0; i < b; i++) {
+//         // Read System B pairs
+//         for (int i = 0; i < b; i++) {
 
-            String key = sc.next();
-            long count = sc.nextLong();
+//             String key = sc.next();
+//             long count = sc.nextLong();
 
-            systemB.add(
-                    new Pair(key, count)
-            );
-        }
+//             systemB.add(
+//                     new Pair(key, count)
+//             );
+//         }
 
-        // Merge reports
-        List<Pair> result =
-                mergeCounts(systemA, systemB);
+//         // Merge reports
+//         List<Pair> result =
+//                 mergeCounts(systemA, systemB);
 
-        // Print final merged report
-        printResult(result);
+//         // Print final merged report
+//         printResult(result);
 
-        sc.close();
-    }
-}
+//         sc.close();
+//     }
+// }
