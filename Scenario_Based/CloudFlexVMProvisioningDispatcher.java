@@ -3,7 +3,7 @@ public final class CloudFlexVMProvisioningDispatcher {
 
     //Constants
     private static final String GENERAL = "GENERAL";
-    //private static final String GPU = "GPU";
+    private static final String GPU = "GPU";
 
     private static final String CREATE = "CREATE";
     public static final String DELETE = "DELETE";
