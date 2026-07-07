@@ -28,5 +28,6 @@ public final class GroupJumbledProductLabels {
             }
             System.out.println();
         }
+        sc.close();
     }
 }

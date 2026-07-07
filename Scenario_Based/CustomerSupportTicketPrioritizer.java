@@ -35,5 +35,6 @@ public final class CustomerSupportTicketPrioritizer {
         for(CustomerPriority cp : customers) {
             System.out.println(cp.customerID);
         }
+        sc.close();
     }
 }

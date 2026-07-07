@@ -40,6 +40,7 @@ public class SimpleVotingSystem {
             System.out.print(winner + " ");
         }
         System.out.println();
+        sc.close();
     }
 }
 
