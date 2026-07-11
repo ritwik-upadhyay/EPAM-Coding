@@ -1,6 +1,6 @@
 package Problem_Solving;
 import java.util.*;
-public class KSmallestElements {
+public class PSA2KSmallestElements {
 
     public static List<Integer> kSmallestElements(int[] nums, int k) {
         if(nums.length==0 || k<=0 || k>nums.length) {
